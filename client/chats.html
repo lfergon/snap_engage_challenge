@@ -71,11 +71,31 @@
             </div>
             <div class="panel-body">
               {{#with showChatHistory}}
-                <div class="list-group">
+                <ul>
                   {{#each showChatHistory}}
-                    <li class="list-group-item">{{this.alias}}: {{this.message}}: {{formatDate this.date}}</li>
+                    {{#if adminEngage this.alias}}
+                      <ul>
+                        <li>
+                          <div class="bubble">
+                            <span class="personName">{{this.alias}}</span><br>
+                            <span class="personSay">{{this.message}}</span> 
+                          </div>
+                          <span class="time round">{{formatDate this.date}}</span> 
+                        </li>
+                      </ul>
+                    {{else}}
+                      <ul>
+                        <li>
+                          <div class="bubble2">
+                            <span class="personName2">{{this.alias}}</span><br>
+                            <span class="personSay2">{{this.message}}</span> 
+                          </div>
+                          <span class="time2 round">{{formatDate this.date}}</span> 
+                        </li>
+                      </ul>
+                    {{/if}}
                   {{/each}}
-                </div>
+                </ul>
               {{/with}}
             </div>
           </div>
@@ -84,3 +104,5 @@
     </div>
   </div>
 </template>
+
+

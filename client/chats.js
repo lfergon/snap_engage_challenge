@@ -22,6 +22,9 @@ Template.chats.helpers({
     if(Session.get("dataChat")){
       return Session.get("dataChat");
     }
+  },
+  adminEngage: function (alias) {
+    return alias==='' ? false:true;
   }
 });
 
