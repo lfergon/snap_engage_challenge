@@ -1,0 +1,311 @@
+@import "bourbon/_bourbon.scss";
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-black-webfont.eot');
+  src: url('/fonts/lato-black-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/lato-black-webfont.woff') format('woff'), url('/fonts/lato-black-webfont.ttf') format('truetype'), url('/fonts/lato-black-webfont.svg#latoblack') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-bold-webfont.eot');
+  src: url('/fonts/lato-bold-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/lato-bold-webfont.woff') format('woff'), url('/fonts/lato-bold-webfont.ttf') format('truetype'), url('/fonts/lato-bold-webfont.svg#latobold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-light-webfont.eot');
+  src: url('/fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/lato-light-webfont.woff') format('woff'), url('/fonts/lato-light-webfont.ttf') format('truetype'), url('/fonts/lato-light-webfont.svg#latolight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('/fonts/lato-regular-webfont.eot');
+  src: url('/fonts/lato-regular-webfont.eot?#iefix') format('embedded-opentype'), url('/fonts/lato-regular-webfont.woff') format('woff'), url('/fonts/lato-regular-webfont.ttf') format('truetype'), url('/fonts/lato-regular-webfont.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+@font-face {
+  font-family: "Mono Social Icons Font";
+  src: url("/fonts/MonoSocialIconsFont-1.10.eot");
+  src: url("/fonts/MonoSocialIconsFont-1.10.eot#iefix") format('embedded-opentype'), url('/fonts/MonoSocialIconsFont-1.10.woff') format('woff'), url('/fonts/MonoSocialIconsFont-1.10.ttf') format('truetype'), url('/fonts/MonoSocialIconsFont-1.10.svg#latoregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+} 
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.72222;
+  color: #34495e;
+  background-color: #ffffff;
+}
+a {
+  color: #16a085;
+  text-decoration: none;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+a:hover,
+a:focus {
+  color: black;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+} 
+
+.monosocial, a.monosocial:before {
+    font-family: 'Mono Social Icons Font';
+    -webkit-text-rendering: optimizeLegibility;
+    -moz-text-rendering: optimizeLegibility;
+    -ms-text-rendering: optimizeLegibility;
+    -o-text-rendering: optimizeLegibility;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+a.monosocial:before {
+    content: attr(title);
+    margin-right: 0.3em;
+    font-size: 130%;
+		color: black;
+}
+
+
+body { 
+	margin: 0;
+  padding: 0;
+	background-color: white;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small {
+  color: #e7e9ec;
+}
+h1,
+h2,
+h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+h4,
+h5,
+h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+h6 {
+  font-weight: normal;
+}
+h1,
+.h1 {
+  font-size: 61px;
+}
+h2,
+.h2 {
+  font-size: 53px;
+}
+h3,
+.h3 {
+  font-size: 40px;
+}
+h4,
+.h4 {
+  font-size: 29px;
+}
+h5,
+.h5 {
+  font-size: 28px;
+}
+h6,
+.h6 {
+  font-size: 24px;
+} 
+
+.navbar {
+	margin-bottom: 0;
+}
+
+a {color: #222; text-decoration:underline;}
+
+.table > thead > tr > th {
+text-decoration: uppercase; 
+text-align:left;
+font-size: 120%;
+}
+td {
+text-align:center;
+}
+
+/* DGB 2014-05-09 Fast hack for the table stripped color */
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td {
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.table > thead > tr > th {
+ border-bottom: 2px solid rgba(255,255,255,0.2);
+}
+
+
+.triangle-up {color: #222}
+.triangle-down {color: #222}
+
+footer {
+ border-top: 0.5em solid black;
+ border-bottom: 1em solid black;
+ background-color: #ffe800;
+ color:white;
+ min-height: 10em;
+}
+
+.btn, .btn-primary {
+border: 0.4rem solid #222; 
+color: #222; 
+background-color: red; 
+background-color: #ffe801; 
+padding: 0.5rem 1rem 0.5rem 1rem; 
+margin: 0 auto; 
+min-width: 5em;
+text-transform: uppercase; 
+font-weight: 700;}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+color: #222;
+background-color: white;
+border-color: #222;
+}
+
+
+footer > h2 {margin:0.5em 0 0 0;}
+
+
+.navbar-fullscreen {
+	background-color: #222;
+	color:white;
+	margin:0;
+}
+.navbar-fullscreen > h1 {
+	margin:0;
+	color:white;
+	padding:0.2em;
+  letter-spacing: -0.09em;
+}
+.navbar-brand > h1 {
+ color: black;
+ letter-spacing: -0.06em;
+ margin:0; background-color: black; color:white; 
+ padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+.container-main {position:relative; 
+	margin-top:0; 
+	//background-color: white; 
+	min-height:20em;  
+	padding: 1em 0 0 0;
+	border-left: 0em; 
+	// border-top: 0.5em solid black; 
+	border-right: 0em;  
+	border-bottom: 0em solid black;  
+}
+
+@media(max-width:767px){
+ .navbar {
+	 .container {
+		 min-height: 8em; 
+		 margin: -1px -1px -2px -1px; 
+	 }
+ }
+ .navbar-brand > h1 {
+	 font-size: 1.2em;
+ 	 margin: 0;
+	 width: 100%;
+	 margin-bottom: 2.5em;
+ }
+ .navbar-header,.navbar-brand {
+	 width:100%;
+ }
+ .navbar-fullscreen > h1 {
+	 font-size:1.3em;
+	}	
+}
+@media(min-width:768px){
+	 .navbar {
+		 .container {
+		  margin: auto auto -2px auto;
+			min-height: 16em;
+		 }
+	 }
+   .container-main {
+	 //border-left: 0.5em solid black; 
+	 // border-top: 0.5em solid black; 
+	 //border-right: 0.5em solid black; 
+ 	 padding: 2em; 
+	}  
+	
+	.navbar-brand > h1 {
+	 font-size:2em;
+ 	 margin: 1em 0em 1em 0em;
+ }
+ .navbar-fullscreen > h1 {
+	 font-size:1.5em;
+	}	
+}
+@media(min-width:992px){
+  .navbar-brand > h1 {
+	 font-size:2.5em;
+ 	 margin: 0.7em 0em 1em 1em;
+ }
+ .navbar-fullscreen > h1 {
+	 font-size:1.8em;
+	}	
+}
+@media(min-width:1200px){
+  .navbar-brand > h1 {
+	 font-size:2.5em;
+ 	 margin: 0.5em 0em 2.3em 1em;
+ }
+	.navbar-fullscreen > h1 {
+	 font-size:2em;
+	}	
+}
+
+body, h1, h2, h3, h4, h5 {
+	font-family: 'Lato'; color: black;
+}
