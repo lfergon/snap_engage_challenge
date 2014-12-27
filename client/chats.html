@@ -2,34 +2,89 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        {{#with userChat}}
-          <div class="list-group">
-            {{#each userChat}}
-              <a class="list-group-item show-pointer" value="{{this.id}}">{{this.requested_by}}</a>
-            {{/each}}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Available chats</h3>
           </div>
-        {{/with}}
+          <div class="panel-body">
+            {{#with userChat}}
+              <div class="list-group">
+                {{#each userChat}}
+                  <a class="list-group-item show-pointer" value="{{this.id}}">{{formatDate this.created_at}}</a>
+                {{/each}}
+              </div>
+            {{/with}}
+          </div>
+        </div>
       </div>
       <div class="col-md-9">
         <div class="row">
-          <div class="col-md-4">
-            <div id="map" style="height: 300px; width: 300px;">{{showDataSelection}}</div>
-          </div>
-          <div class="col-md-8">
-            {{#if showUserAgent}}
-              <img src="{{showUserAgent.browser}}" alt="">
-              {{showUserAgent.version}}
-            {{/if}}
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Location and browser information</h3>
+            </div>
+            <div class="panel-body">
+              <div class="col-md-4">
+                <div id="map" style="height: 250px; width: 250px;">{{showDataSelection}}</div>
+              </div>
+              <div class="col-md-8">
+                <div class="row">
+                  {{#if showUserAgent}}
+                    <img src="{{showUserAgent.browser}}" height="50" width="50">
+                  {{/if}}
+                </div>
+                <div class="row">
+                  {{#if showUserAgent}}
+                    Browser version: {{showUserAgent.version}}
+                  {{/if}}
+                </div>
+                <div class="row">
+                  {{#with showChatInfo}}
+                    Entry URL: {{this.entry_url}}
+                  {{/with}}
+                </div>
+                <div class="row">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Requested by</th>
+                        <th>Time</th>
+                        <th>IP</th>
+                        <th>Chat duration</th>
+                        <th>Chat wait time</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="info">
+                        {{#with showChatInfo}}
+                          <td>{{this.requested_by}}</td>
+                          <td>{{formatDate this.created_at}}</td>
+                          <td>{{this.ip_address}}</td>
+                          <td>{{this.chat_duration}}</td>
+                          <td>{{this.chat_waittime}}</td>
+                        {{/with}}
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">
-            Chat info!!
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            Chat transcription
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h3 class="panel-title">Chat history</h3>
+            </div>
+            <div class="panel-body">
+              {{#with showChatHistory}}
+                <div class="list-group">
+                  {{#each showChatHistory}}
+                    <li class="list-group-item">{{this.alias}}: {{this.message}}: {{formatDate this.date}}</li>
+                  {{/each}}
+                </div>
+              {{/with}}
+            </div>
           </div>
         </div>
       </div>

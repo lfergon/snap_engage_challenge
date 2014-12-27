@@ -3,14 +3,24 @@ Template.chats.helpers({
     return arrayDataApi;
   },
   showDataSelection: function () {
-    if(Session.get("selectedUser")){
+    if(Session.get("dataChat")){
       //27.12.2014 LFG find the object with selected id in the array of data
-      loadMap(findIdInArray(Session.get("selectedUser")).latitude, findIdInArray(Session.get("selectedUser")).longitude);
+      loadMap(Session.get("dataChat").latitude, Session.get("dataChat").longitude);
     }
   },
   showUserAgent: function () {
-    if(Session.get("selectedUser")){
-      return getBrowser(findIdInArray(Session.get("selectedUser")).user_agent);
+    if(Session.get("dataChat")){
+      return getBrowser(Session.get("dataChat").user_agent);
+    }
+  },
+  showChatHistory: function () {
+    if(Session.get("dataChat")){
+      return Session.get("dataChat").transcript;
+    }
+  },
+  showChatInfo: function () {
+    if(Session.get("dataChat")){
+      return Session.get("dataChat");
     }
   }
 });
@@ -22,5 +32,6 @@ Template.chats.rendered = function () {
 Template.chats.events({
   "click .show-pointer": function (event) {
     Session.set("selectedUser", event.currentTarget.attributes[1].value);
+    Session.set("dataChat", findIdInArray(Session.get("selectedUser")));
   }
 });

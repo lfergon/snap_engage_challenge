@@ -1,7 +1,7 @@
-Template.registerHelper('arrayifyObject', function (obj) {
-  var result = [];
-  for (var key in obj){
-    result.push({name:key, value: obj[key]});
-  }
-  return result;
+// 27.12.2014 LFG Format for the dates
+DATEFORMAT = "HH:mm:ss MM/DD/YYYY";
+
+Template.registerHelper('formatDate', function (date) {
+  return moment(date).format(DATEFORMAT);
 });
+
