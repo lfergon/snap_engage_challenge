@@ -1,68 +1,38 @@
-<template name="company">
-  <style>
-    hr {
-      color: black;
-      height: 5px;
-    }
-    .container-main {
-      padding: 1em;
-    }
-  </style>
-  <div class='container'>
-    <div class="row" style="text-align: center; margin-top:1em;">
-      <h1 class='text-center' style='margin:0;'>
-        <a rel='nofollow' target='_blank' style='text-decoration:underscore;' href="{{this.dataTemplate.url}}">{{this.dataTemplate.name}}</a>
-      </h1>
-      {{#if mantra}}
-        <p class='text-center'>{{this.dataTemplate.descriptionShort}}</p>
-      {{/if}}
-      <div class="row" style='padding: 1.5em 0 0 0'>
-        <div class="col-sm-4 text-center">
-          {{#if this.dataTemplate.logo}}
-          <a rel='nofollow' href="{{this.dataTemplate.url}}">
-            <img style="padding: 0.5em; min-width: 90%; min-height: 80px; border: 1px solid #aaa; background-color: white;" src="{{this.dataTemplate.logo}}">
-          </a>
-          {{/if}}
+<template name="chats">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        {{#with userChat}}
+          <div class="list-group">
+            {{#each userChat}}
+              <a class="list-group-item show-pointer" value="{{this.id}}">{{this.requested_by}}</a>
+            {{/each}}
+          </div>
+        {{/with}}
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-md-4">
+            <div id="map" style="height: 300px; width: 300px;">{{showDataSelection}}</div>
+          </div>
+          <div class="col-md-8">
+            {{#if showUserAgent}}
+              <img src="{{showUserAgent.browser}}" alt="">
+              {{showUserAgent.version}}
+            {{/if}}
+          </div>
         </div>
-        <div class="col-sm-8">
-          <p style="">{{#if description}}{{this.dataTemplate.description}}{{/if}}</p>
+        <div class="row">
+          <div class="col-md-12">
+            Chat info!!
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            Chat transcription
+          </div>
         </div>
       </div>
-      <br>
-       <div class="row">
-        <div class="col-md-6 text-center">
-          {{#if this.dataTemplate.followersTwitter}}
-          <a href='http://twitter.com/{{this.dataTemplate.twitter}}' style='font-size:3em;  font-weight: 300; text-decoration:none' class='monosocial' title='circletwitterbird'>
-              {{this.dataTemplate.followersTwitter}}
-            </a>
-          {{/if}}
-        </div>
-        <div class="col-md-6 text-center">
-          {{#if this.dataTemplate.facebookLikes}}
-            <a href='http://facebook.com/{{this.dataTemplate.facebook}}'  style='font-size:3em; font-weight: 300; text-decoration:none' class='monosocial' title='circlefacebook'>
-              {{this.dataTemplate.facebookLikes}}
-            </a>
-          {{/if}}
-        </div>
-      </div>
-      <div class="row" style='padding:2em 0 0 0'>
-        {{startupCharts}}
-        <div class="col-md-6">
-          <div id="dataTwitter"></div>
-        </div>
-        <div class="col-md-6">
-          <div id="dataStartup"></div>
-        </div>
-      </div>
-      <div class="row" style='padding:2em 0 0 0'>
-        <div class="col-md-12">
-          <div id="dataWeb"></div>
-        </div>
-      </div>
-      <div class='text-center' style='padding:2em 0 0 0'>
-        <a href='/' style='text-decoration:none' class='btn btn-primary text-center'>Go back</a>
-      </div>
-      <br><br>
     </div>
   </div>
 </template>

@@ -1,4 +1,4 @@
-arrayData = [
+arrayDataApi = [
   {
     "id":"4461a7ed-ac49-4ac2-bef5-7f44339dadf6",
     "url":"https://www.snapengage.com/viewcase?c\u003d4461a7ed-ac49-4ac2-bef5-7f44339dadf6",
