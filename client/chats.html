@@ -30,17 +30,10 @@
               <div class="col-md-8">
                 <div class="row">
                   {{#if showUserAgent}}
-                    <img src="{{showUserAgent.browser}}" height="50" width="50">
+                    <span class="badge"><img src="{{showUserAgent.browser}}" height="25" width="25"> Browser version: {{showUserAgent.version}}</span>
                   {{/if}}
-                </div>
-                <div class="row">
-                  {{#if showUserAgent}}
-                    Browser version: {{showUserAgent.version}}
-                  {{/if}}
-                </div>
-                <div class="row">
                   {{#with showChatInfo}}
-                    Entry URL: {{this.entry_url}}
+                    <span class="badge"><img src="{{showUserAgent.browser}}" height="25" width="25"> Entry URL: {{this.entry_url}}</span>
                   {{/with}}
                 </div>
                 <div class="row">
