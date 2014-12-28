@@ -19,6 +19,14 @@
 
       $> meteor run --port 8080
 
+  * For deployment *
+  
+      $> meteor deploy snaptest.meteor.com
+
+  * Serving at *
+  
+    http://snaptest.meteor.com
+
   * Data provided does not have a predefined structure, some fields are missed, for example "survey".
 
   * BUGS *

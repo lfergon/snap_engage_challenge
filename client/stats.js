@@ -33,12 +33,9 @@ Template.stats.helpers({
     }, 50);
   },
   browsersPieChart: function () {
-    var dataForChart = [];
-    arrayDataApi.forEach(function (chat) {
-      dataForChart.push([chat.userAgent, 2]);
-    });
     Meteor.setTimeout(function () {
-      generatesPieChart('#browserStats', 'Browser', dataForChart);
+      //28.12.2014 LFG Need to think a way to scale this chart
+      generatesPieChart('#browserStats', 'Browser', [['Firefox', 2], ['Chrome', 4]]);
     }, 50);
   }
 });
