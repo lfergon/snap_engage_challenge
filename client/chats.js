@@ -49,15 +49,23 @@ Template.chats.helpers({
 });
 
 Template.chats.rendered = function () {
-  
+  if(Session.get("selectedUser")){
+    $("a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+  }
 };
 
 Template.chats.events({
-  "click .show-pointer": function (event) {
+  "click .show-pointer": function (event, template) {
     Session.set("selectedUser", event.currentTarget.attributes[1].value);
+    Log.info(Session.get("selectedUser"));
     Session.set("dataChat", findIdInArray(Session.get("selectedUser")));
+    template.$('.show-pointer').css("background-color", "");
+    $( "a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
   },
   "click #sort_by_date": function () {
+    Log.info(Session.get("selectedUser"));
+    $('.show-pointer').css("background-color", "");
+    $( "a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
     if(Session.get("sortDirection")===-1){
       Session.set("sortDirection", 1);
     }else if(Session.get("sortDirection")===1){
