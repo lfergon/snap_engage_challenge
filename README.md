@@ -54,7 +54,7 @@
 
       3. DONE 28.12.2014 LFG Line over columns charts to show the average times 
 
-      4. stats.js needs to be refactor, redundant code
+      4. DONE 28.12.2014 LFG stats.js needs to be refactor, redundant code
 
       5. DONE 28.12.2014 LFG The languages charts need to implement the correct logic
 
