@@ -6,7 +6,7 @@
 
     - Altought I think that Ember.js or backbone could be a better option for this situation. 
 
- ** meteor packages **
+** meteor packages **
 
       $> meteor add meteor-platform
 
@@ -22,7 +22,7 @@
 
       $> meteor add mrt:googlemaps
 
- ** For launch the app: **
+** For launch the app: **
 
       $> meteor run --port 8080
 
@@ -48,10 +48,12 @@
 
     * 28.12.2014 LFG *
 
-      1. The browsers/languages charts need to implement the correct logic
+      1. The browsers charts need to implement the correct logic
 
       2. DONE 28.12.2014 LFG Browser languages of the user could be plot in a chart
 
       3. DONE 28.12.2014 LFG Line over columns charts to show the average times 
 
       4. stats.js needs to be refactor, redundant code
+
+      5. DONE 28.12.2014 LFG The languages charts need to implement the correct logic

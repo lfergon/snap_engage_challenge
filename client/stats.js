@@ -60,9 +60,20 @@ Template.stats.helpers({
     }, 50);
   },
   languagesPieChart: function () {
+    var arrayLanguages = [];
+    arrayDataApi.forEach(function (element) {
+      arrayLanguages.push(element.language_code.substring(0,2));
+    });
+    //28.12.2014 LFG look for the unique values of languages in array
+    var uniqueLanguagesValues = _.uniq(arrayLanguages);
+    var processedArrayToDraw = [];
+    uniqueLanguagesValues.forEach(function (language) {
+      //28.12.2014 LFG count the number of times that one language appears in the array
+      processedArrayToDraw.push([language, arrayLanguages.filter(function (x) {return x==language;}).length]);
+    });
     Meteor.setTimeout(function () {
       //28.12.2014 LFG Need to think a way to scale this chart
-      generatesPieChart('#languagesStats', 'Languages', [['English', 5], ['German', 1]]);
+      generatesPieChart('#languagesStats', 'Languages', processedArrayToDraw);
     }, 50);
   }
 });
