@@ -48,10 +48,10 @@
 
     * 28.12.2014 LFG *
 
-      1. The browsers chart needs to implement the correct logic
+      1. The browsers/languages charts need to implement the correct logic
 
-      2. Browser languages of the user could be plot in a chart
+      2. DONE 28.12.2014 LFG Browser languages of the user could be plot in a chart
 
-      3. Line over columns charts to show the average times DONE 28.12.2014 LFG
+      3. DONE 28.12.2014 LFG Line over columns charts to show the average times 
 
       4. stats.js needs to be refactor, redundant code

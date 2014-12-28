@@ -58,6 +58,12 @@ Template.stats.helpers({
       //28.12.2014 LFG Need to think a way to scale this chart
       generatesPieChart('#browserStats', 'Browser', [['Firefox', 2], ['Chrome', 4]]);
     }, 50);
+  },
+  languagesPieChart: function () {
+    Meteor.setTimeout(function () {
+      //28.12.2014 LFG Need to think a way to scale this chart
+      generatesPieChart('#languagesStats', 'Languages', [['English', 5], ['German', 1]]);
+    }, 50);
   }
 });
 
