@@ -2,6 +2,10 @@
 Session.set("sortDirection", 1);
 Session.set("sortDirectionOffline", 1);
 Template.chats.helpers({
+  chatSelected: function () {
+    console.log(Session.get("selectedUser"));
+    return Session.get("selectedUser") ? true:false;
+  },
   userChat: function () {
     var dataChats = [];
     arrayDataApi.forEach(function (chatInfo) {

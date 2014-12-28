@@ -37,100 +37,115 @@
           </div>
         </div>
       </div>
-      <div class="col-md-9">
-        <div class="row">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">Location and browser information</h3>
-            </div>
-            <div class="panel-body">
-              <div class="col-md-4">
-                <div id="map" style="height: 250px; width: 250px;">{{showDataSelection}}</div>
+      {{#if chatSelected}}
+        <div class="col-md-9">
+          <div class="row">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Location and browser information</h3>
               </div>
-              <div class="col-md-8">
-                <div class="row">
-                  {{#if showUserAgent}}
-                    <span class="badge"><img src="{{showUserAgent.browser}}" height="25" width="25"> Browser version: {{showUserAgent.version}}</span>
-                  {{/if}}
-                  {{#with showChatInfo}}
-                    <span class="badge"><img src="{{showUserAgent.browser}}" height="25" width="25"> Entry URL: {{this.entry_url}}</span>
-                  {{/with}}
+              <div class="panel-body">
+                <div class="col-md-4">
+                  <div id="map" style="height: 250px; width: 250px;">{{showDataSelection}}</div>
                 </div>
-                <div class="row">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Requested by</th>
-                        <th>Time</th>
-                        <th>IP</th>
-                        <th>Chat duration</th>
-                        <th>Chat wait time</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="info">
-                        {{#with showChatInfo}}
-                          <td>{{this.requested_by}}</td>
-                          <td>{{formatDate this.created_at}}</td>
-                          <td>{{this.ip_address}}</td>
-                          <td>{{this.chat_duration}}</td>
-                          <td>{{this.chat_waittime}}</td>
-                        {{/with}}
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="row">
-                  {{#with showChatInfo}}
-                    <span class="badge">Feedback: {{#if this.survey_comments}}{{this.survey_comments}}{{else}} No feedback provided{{/if}}</span>
-                  {{/with}}
-                  {{#with description}}
-                    <span class="label label-primary">Question: {{#if this.description}}{{this.description}}{{else}} No feedback provided{{/if}}</span>
-                  {{/with}}
+                <div class="col-md-8">
+                  <div class="row">
+                    {{#if showUserAgent}}
+                      <span class="badge"><img src="{{showUserAgent.browser}}" height="25" width="25"> Browser version: {{showUserAgent.version}}</span>
+                    {{/if}}
+                    {{#with showChatInfo}}
+                      <span class="badge"><img src="{{showUserAgent.browser}}" height="25" width="25"> Entry URL: {{this.entry_url}}</span>
+                    {{/with}}
+                  </div>
+                  <div class="row">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Requested by</th>
+                          <th>Time</th>
+                          <th>IP</th>
+                          <th>Chat duration</th>
+                          <th>Chat wait time</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="info">
+                          {{#with showChatInfo}}
+                            <td>{{this.requested_by}}</td>
+                            <td>{{formatDate this.created_at}}</td>
+                            <td>{{this.ip_address}}</td>
+                            <td>{{this.chat_duration}}</td>
+                            <td>{{this.chat_waittime}}</td>
+                          {{/with}}
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="row">
+                    {{#with showChatInfo}}
+                      <span class="badge">Feedback: {{#if this.survey_comments}}{{this.survey_comments}}{{else}} No feedback provided{{/if}}</span>
+                    {{/with}}
+                    {{#with description}}
+                      <span class="label label-primary">Question: {{#if this.description}}{{this.description}}{{else}} No feedback provided{{/if}}</span>
+                    {{/with}}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="row">
+            {{#if showChatHistory}}
+              <div class="panel panel-success">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Chat history</h3>
+                </div>
+                <div class="panel-body">
+                  {{#with showChatHistory}}
+                    <ul>
+                      {{#each showChatHistory}}
+                        {{#if adminEngage this.alias}}
+                          <ul>
+                            <li>
+                              <div class="bubble">
+                                <span class="personName">{{this.alias}}</span><br>
+                                <span class="personSay">{{this.message}}</span> 
+                              </div>
+                              <span class="time round">{{formatDate this.date}}</span> 
+                            </li>
+                          </ul>
+                        {{else}}
+                          <ul>
+                            <li>
+                              <div class="bubble2">
+                                <span class="personName2">Chat user, no alias provided</span><br>
+                                <span class="personSay2">{{this.message}}</span> 
+                              </div>
+                              <span class="time2 round">{{formatDate this.date}}</span> 
+                            </li>
+                          </ul>
+                        {{/if}}
+                      {{/each}}
+                    </ul>
+                  {{/with}}
+                </div>
+              </div>
+            {{/if}}
+          </div>
         </div>
-        <div class="row">
-          {{#if showChatHistory}}
-            <div class="panel panel-success">
+      {{else}}
+        <div class="col-md-9">
+          <div class="row">
+            <div class="panel panel-info">
               <div class="panel-heading">
-                <h3 class="panel-title">Chat history</h3>
+                <h3 class="panel-title">Select one chat in the left panel</h3>
               </div>
               <div class="panel-body">
-                {{#with showChatHistory}}
-                  <ul>
-                    {{#each showChatHistory}}
-                      {{#if adminEngage this.alias}}
-                        <ul>
-                          <li>
-                            <div class="bubble">
-                              <span class="personName">{{this.alias}}</span><br>
-                              <span class="personSay">{{this.message}}</span> 
-                            </div>
-                            <span class="time round">{{formatDate this.date}}</span> 
-                          </li>
-                        </ul>
-                      {{else}}
-                        <ul>
-                          <li>
-                            <div class="bubble2">
-                              <span class="personName2">Chat user, no alias provided</span><br>
-                              <span class="personSay2">{{this.message}}</span> 
-                            </div>
-                            <span class="time2 round">{{formatDate this.date}}</span> 
-                          </li>
-                        </ul>
-                      {{/if}}
-                    {{/each}}
-                  </ul>
-                {{/with}}
+                <p class="text-center">Once you select a user you can see the information on this section</p>
               </div>
             </div>
-          {{/if}}
+          </div>
         </div>
-      </div>
+      {{/if}}
     </div>
   </div>
 </template>
