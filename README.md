@@ -3,16 +3,23 @@
   * api/sample-chat-data.json: *
 
     - This file contains an array that simulates the answer of a RESTFUL API that returns JSON. I'll use meteor for faster development as I've been using it for the last two years.
+
     - Altought I think that Ember.js or backbone could be a better option for this situation. 
 
   * meteor packages *
 
       $> meteor add meteor-platform
+
       $> meteor add iron:router
+
       $> meteor add mrt:moment
+
       $> meteor add sacha:spin
+
       $> meteor add fezvrasta:bootstrap-material-design
+
       $> meteor add mrt:highcharts-with-exporting
+
       $> meteor add mrt:googlemaps
 
   * For launch the app: *
