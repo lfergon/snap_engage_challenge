@@ -10,6 +10,12 @@
   cursor: pointer;
 }
 
+.charts {
+  min-width: 310px; 
+  height: 400px; 
+  margin: 0 auto
+}
+
 .operson { float:right; padding-left:0px; color:#5586e5; font-weight:600;}
 .alter { float:right;}
 .altertext { float:right; position: relative;  }

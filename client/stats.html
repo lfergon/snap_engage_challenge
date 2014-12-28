@@ -1,34 +1,48 @@
 <template name="stats">
   <div class="container">
     <div class="row">
-     <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Average chat user wait time</h3>
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Chat user wait time</h3>
+          </div>
+          <div class="panel-body charts" id="waitAverage">
+            {{waitAverageTimeChart}}
+          </div>
         </div>
-        <div class="panel-body">
-          
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Chat duration time</h3>
+          </div>
+          <div class="panel-body charts" id="durationAverage">
+            {{durationAverageTimeChart}}
+          </div>
         </div>
-      </div> 
+      </div>
     </div>
     <div class="row">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Average chat duration time</h3>
+       <div class="col-md-6">
+         <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Survey scores</h3>
+          </div>
+          <div class="panel-body charts" id="scoreAverage">
+            {{surveyChart}}
+          </div>
         </div>
-        <div class="panel-body">
-          
+       </div>
+       <div class="col-md-6">
+         <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Browsers data</h3>
+          </div>
+          <div class="panel-body charts" id="browserStats">
+            {{browsersPieChart}}
+          </div>
         </div>
-      </div> 
-    </div>
-    <div class="row">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Survey score average</h3>
-        </div>
-        <div class="panel-body">
-          
-        </div>
-      </div> 
+       </div>
     </div>
   </div>  
 </template>

@@ -9,6 +9,9 @@
           <div class="panel-body">
             {{#with userChat}}
               <div class="list-group">
+                <div style="white-space: nowrap; cursor:pointer; color: green;" id="sort_by_date">
+                  <span class='glyphicon {{#if isThisColumnSortedUp}}glyphicon-sort-by-attributes-alt{{else}}glyphicon-sort-by-attributes{{/if}} pull-right'></span>Sort by date
+                </div>
                 {{#each userChat}}
                   <a class="list-group-item show-pointer" value="{{this.id}}">{{formatDate this.created_at}}</a>
                 {{/each}}
@@ -60,6 +63,11 @@
                     </tbody>
                   </table>
                 </div>
+                <div class="row">
+                  {{#with showChatInfo}}
+                    <span class="badge">Feedback: {{#if this.survey_comments}}{{this.survey_comments}}{{else}} No feedback provided{{/if}}</span>
+                  {{/with}}
+                </div>
               </div>
             </div>
           </div>
@@ -87,7 +95,7 @@
                       <ul>
                         <li>
                           <div class="bubble2">
-                            <span class="personName2">{{this.alias}}</span><br>
+                            <span class="personName2">Chat user, no alias provided</span><br>
                             <span class="personSay2">{{this.message}}</span> 
                           </div>
                           <span class="time2 round">{{formatDate this.date}}</span> 

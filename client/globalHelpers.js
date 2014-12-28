@@ -5,3 +5,6 @@ Template.registerHelper('formatDate', function (date) {
   return moment(date).format(DATEFORMAT);
 });
 
+Template.registerHelper('isActive', function (input) {
+  return (Router.current().route._path===input)? "active":"";
+});
