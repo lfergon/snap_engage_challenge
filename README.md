@@ -58,4 +58,4 @@
 
       5. DONE 28.12.2014 LFG The languages charts need to implement the correct logic
 
-      6. Take care of the field type, offline or chat
+      6. DONE 28.12.2014 LFG Take care of the field type, offline or chat

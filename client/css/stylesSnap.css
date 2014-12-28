@@ -10,6 +10,10 @@
   cursor: pointer;
 }
 
+.show-pointer-offline {
+  cursor: pointer;
+}
+
 .charts {
   min-width: 310px; 
   height: 400px; 

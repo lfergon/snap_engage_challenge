@@ -19,6 +19,23 @@
             {{/with}}
           </div>
         </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Offline</h3>
+          </div>
+          <div class="panel-body">
+            {{#with userOffline}}
+              <div class="list-group">
+                <div style="white-space: nowrap; cursor:pointer; color: green;" id="sort_by_date_offline">
+                  <span class='glyphicon {{#if isThisColumnSortedUpOffline}}glyphicon-sort-by-attributes-alt{{else}}glyphicon-sort-by-attributes{{/if}} pull-right'></span>Sort by date
+                </div>
+                {{#each userOffline}}
+                  <a class="list-group-item show-pointer-offline" value="{{this.id}}">{{formatDate this.created_at}}</a>
+                {{/each}}
+              </div>
+            {{/with}}
+          </div>
+        </div>
       </div>
       <div class="col-md-9">
         <div class="row">
@@ -67,46 +84,51 @@
                   {{#with showChatInfo}}
                     <span class="badge">Feedback: {{#if this.survey_comments}}{{this.survey_comments}}{{else}} No feedback provided{{/if}}</span>
                   {{/with}}
+                  {{#with description}}
+                    <span class="label label-primary">Question: {{#if this.description}}{{this.description}}{{else}} No feedback provided{{/if}}</span>
+                  {{/with}}
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="panel panel-success">
-            <div class="panel-heading">
-              <h3 class="panel-title">Chat history</h3>
+          {{#if showChatHistory}}
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <h3 class="panel-title">Chat history</h3>
+              </div>
+              <div class="panel-body">
+                {{#with showChatHistory}}
+                  <ul>
+                    {{#each showChatHistory}}
+                      {{#if adminEngage this.alias}}
+                        <ul>
+                          <li>
+                            <div class="bubble">
+                              <span class="personName">{{this.alias}}</span><br>
+                              <span class="personSay">{{this.message}}</span> 
+                            </div>
+                            <span class="time round">{{formatDate this.date}}</span> 
+                          </li>
+                        </ul>
+                      {{else}}
+                        <ul>
+                          <li>
+                            <div class="bubble2">
+                              <span class="personName2">Chat user, no alias provided</span><br>
+                              <span class="personSay2">{{this.message}}</span> 
+                            </div>
+                            <span class="time2 round">{{formatDate this.date}}</span> 
+                          </li>
+                        </ul>
+                      {{/if}}
+                    {{/each}}
+                  </ul>
+                {{/with}}
+              </div>
             </div>
-            <div class="panel-body">
-              {{#with showChatHistory}}
-                <ul>
-                  {{#each showChatHistory}}
-                    {{#if adminEngage this.alias}}
-                      <ul>
-                        <li>
-                          <div class="bubble">
-                            <span class="personName">{{this.alias}}</span><br>
-                            <span class="personSay">{{this.message}}</span> 
-                          </div>
-                          <span class="time round">{{formatDate this.date}}</span> 
-                        </li>
-                      </ul>
-                    {{else}}
-                      <ul>
-                        <li>
-                          <div class="bubble2">
-                            <span class="personName2">Chat user, no alias provided</span><br>
-                            <span class="personSay2">{{this.message}}</span> 
-                          </div>
-                          <span class="time2 round">{{formatDate this.date}}</span> 
-                        </li>
-                      </ul>
-                    {{/if}}
-                  {{/each}}
-                </ul>
-              {{/with}}
-            </div>
-          </div>
+          {{/if}}
         </div>
       </div>
     </div>
