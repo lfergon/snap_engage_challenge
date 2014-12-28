@@ -48,7 +48,7 @@
 
     * 28.12.2014 LFG *
 
-      1. The browsers charts need to implement the correct logic
+      1. DONE 28.12.2014 LFG The browsers charts need to implement the correct logic
 
       2. DONE 28.12.2014 LFG Browser languages of the user could be plot in a chart
 
@@ -57,3 +57,5 @@
       4. stats.js needs to be refactor, redundant code
 
       5. DONE 28.12.2014 LFG The languages charts need to implement the correct logic
+
+      6. Take care of the field type, offline or chat

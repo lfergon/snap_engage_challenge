@@ -54,9 +54,20 @@ Template.stats.helpers({
     }, 50);
   },
   browsersPieChart: function () {
+    var arrayBrowsers = [];
+    arrayDataApi.forEach(function (element) {
+      //console.log(element.user_agent.match(/Safari|Chrome|Firefox/g));
+      arrayBrowsers.push(element.user_agent.match(/Safari|Firefox/g)[0]);
+    });
+    var uniqueBrowserValues = _.uniq(arrayBrowsers);
+    var arrayToDraw = [];
+    uniqueBrowserValues.forEach(function (browser) {
+      //28.12.2014 LFG count the number of times that one browser appears in the array
+      arrayToDraw.push([browser, arrayBrowsers.filter(function (x) {return x==browser;}).length]);
+    });
     Meteor.setTimeout(function () {
       //28.12.2014 LFG Need to think a way to scale this chart
-      generatesPieChart('#browserStats', 'Browser', [['Firefox', 2], ['Chrome', 4]]);
+      generatesPieChart('#browserStats', 'Browser', arrayToDraw);
     }, 50);
   },
   languagesPieChart: function () {
