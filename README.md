@@ -1,4 +1,4 @@
-27.12.2014 LFG
+** 27.12.2014 LFG **
 
   * api/sample-chat-data.json: *
 
