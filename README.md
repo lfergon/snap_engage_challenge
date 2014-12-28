@@ -52,4 +52,6 @@
 
       2. Browser languages of the user could be plot in a chart
 
-      3. Line over columns charts to show the average times
+      3. Line over columns charts to show the average times DONE 28.12.2014 LFG
+
+      4. stats.js needs to be refactor, redundant code
