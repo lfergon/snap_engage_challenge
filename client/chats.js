@@ -3,7 +3,6 @@ Session.set("sortDirection", 1);
 Session.set("sortDirectionOffline", 1);
 Template.chats.helpers({
   chatSelected: function () {
-    console.log(Session.get("selectedUser"));
     return Session.get("selectedUser") ? true:false;
   },
   userChat: function () {
@@ -39,7 +38,9 @@ Template.chats.helpers({
   showDataSelection: function () {
     if(Session.get("dataChat")){
       //27.12.2014 LFG find the object with selected id in the array of data
-      loadMap(Session.get("dataChat").latitude, Session.get("dataChat").longitude);
+      Meteor.setTimeout(function () {
+        loadMap(Session.get("dataChat").latitude, Session.get("dataChat").longitude);
+      }, 50);
     }
   },
   showUserAgent: function () {

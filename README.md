@@ -40,9 +40,9 @@
 
       * 28.12.2014 LFG *
         
-        - 'active' class for links in navbar is not working in the correct way
+        - DONE 29.12.2014 LFG 'active' class for links in navbar is not working in the correct way
 
-        - Google Maps is not draw correctly when we back from /stats. The problem is related to the width/heigth of the div that contains the map when the DOM is rendered -> TypeError: Cannot read property 'offsetWidth' of null
+        - DONE 29.12.2014 LFG Google Maps is not draw correctly when we back from /stats. The problem is related to the width/heigth of the div that contains the map when the DOM is rendered -> TypeError: Cannot read property 'offsetWidth' of null
 
   ** IMPROVEMENTS **
 
