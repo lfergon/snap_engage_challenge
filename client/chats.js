@@ -96,12 +96,16 @@ Template.chats.events({
     Session.set("dataChat", findIdInArray(Session.get("selectedUser")));
     template.$('.show-pointer').css("background-color", "");
     template.$('.show-pointer-offline').css("background-color", "");
-    $( "a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    if(Session.get("selectedUser")){
+      $("a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    }
   },
   "click #sort_by_date": function () {
     $('.show-pointer').css("background-color", "");
     $('.show-pointer-offline').css("background-color", "");
-    $( "a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    if(Session.get("selectedUser")){
+      $("a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    }
     if(Session.get("sortDirection")===-1){
       Session.set("sortDirection", 1);
     }else if(Session.get("sortDirection")===1){
@@ -113,12 +117,16 @@ Template.chats.events({
     Session.set("dataChat", findIdInArray(Session.get("selectedUser")));
     template.$('.show-pointer-offline').css("background-color", "");
     template.$('.show-pointer').css("background-color", "");
-    $( "a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    if(Session.get("selectedUser")){
+      $("a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    }
   },
   "click #sort_by_date_offline": function () {
     $('.show-pointer-offline').css("background-color", "");
     $('.show-pointer').css("background-color", "");
-    $( "a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    if(Session.get("selectedUser")){
+      $("a[value={session}]".supplant({session: Session.get("selectedUser")})).css("background-color", "#aaa");
+    }
     if(Session.get("sortDirectionOffline")===-1){
       Session.set("sortDirectionOffline", 1);
     }else if(Session.get("sortDirectionOffline")===1){
