@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <h3 class="panel-title">Chat user wait time</h3>
           </div>
           <div class="panel-body charts" id="waitAverage">
@@ -13,7 +13,7 @@
       </div>
       <div class="col-md-6">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <h3 class="panel-title">Chat duration time</h3>
           </div>
           <div class="panel-body charts" id="durationAverage">
@@ -25,7 +25,7 @@
     <div class="row">
        <div class="col-md-12">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <h3 class="panel-title">Survey scores</h3>
           </div>
           <div class="panel-body charts" id="scoreAverage">
@@ -37,7 +37,7 @@
     <div class="row">
       <div class="col-md-6">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <h3 class="panel-title">Browsers data</h3>
           </div>
           <div class="panel-body charts" id="browserStats">
@@ -47,7 +47,7 @@
       </div>
       <div class="col-md-6">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <h3 class="panel-title">Languages data</h3>
           </div>
           <div class="panel-body charts" id="languagesStats">
@@ -59,14 +59,17 @@
     <div class="row">
       <div class="col-md-12">
         <div class="panel panel-primary">
-          <div class="panel-heading">
+          <div class="panel-heading text-center">
             <h3 class="panel-title">Questions online/offline</h3>
+            <div class="text-center">
+              <button class="btn btn-info" id="filter">{{filterUserAction}}</button><button class="btn btn-danger" id="cancel_filter">Cancel filter</button>
+            </div>
           </div>
           <div class="panel-body charts" id="onlineOffline">
             {{onlineOfflineChart}}
           </div>
           <div class="panel-footer text-center">
-            <button class="btn btn-primary" id="filter">{{filterUserAction}}</button><button class="btn btn-danger" id="cancel_filter">Cancel filter</button>
+            
           </div>
         </div>
       </div>
