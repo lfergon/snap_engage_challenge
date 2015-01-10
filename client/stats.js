@@ -63,7 +63,7 @@ Template.stats.events({
   'click #filter': function () {
     if(!Session.get("filter")){
       Session.set("filter", "online");
-      Session.set("show_cancel", false);
+      Session.set("show_cancel", true);
     }else if(Session.get("filter")==="online"){
       Session.set("filter", "offline");
       Session.set("show_cancel", true);
