@@ -8,7 +8,7 @@ Template.chats.helpers({
   userChat: function () {
     var dataChats = [];
     arrayDataApi.forEach(function (chatInfo) {
-      if(chatInfo.type==='chat'){
+      if(chatInfo.type==="chat"){
         dataChats.push({id: chatInfo.id, created_at: chatInfo.created_at }); 
       }
     });
