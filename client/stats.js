@@ -1,3 +1,4 @@
+Session.setDefault("show_cancel", false);
 Template.stats.helpers({
   waitAverageTimeChart: function () {
     var wait = processDataToDrawTheColumnsCharts('wait');
@@ -46,12 +47,15 @@ Template.stats.helpers({
   },
   filterUserAction: function () {
     if(!Session.get("filter")){
-      return "Total users";
+      return "Click to see users online";
     }else if(Session.get("filter")==="online"){
-      return "Users online";
+      return "Click to see users offline";
     }else if(Session.get("filter")==="offline"){
-      return "Users offline";
+      return "Click to see users online";
     }
+  },
+  noCancelFilterShowed: function () {
+    return Session.get("show_cancel") ? true:false;
   }
 });
 
@@ -59,14 +63,18 @@ Template.stats.events({
   'click #filter': function () {
     if(!Session.get("filter")){
       Session.set("filter", "online");
+      Session.set("show_cancel", false);
     }else if(Session.get("filter")==="online"){
       Session.set("filter", "offline");
+      Session.set("show_cancel", true);
     }else if(Session.get("filter")==="offline"){
       Session.set("filter", "online");
+      Session.set("show_cancel", true);
     }
   },
   'click #cancel_filter': function () {
     Session.set("filter", undefined);
+    Session.set("show_cancel", false);
   }
 });
 Template.stats.rendered = function () {
